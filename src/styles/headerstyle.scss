@@ -1,0 +1,276 @@
+// Header
+.header {
+  padding: 15px 0;
+  .container {
+    @include flex (flex, normal, normal, column);
+  }
+
+  @media (max-width: 477px) {
+    height: 50px;
+    padding: 4px 0;
+  }
+}
+
+.header__inner {
+  @include flex (flex, normal, normal, row);
+  margin-bottom: 20px;
+
+  @media (max-width: 768px) {
+    margin-bottom: 0;
+    justify-content: space-between;
+  }
+}
+
+.header-inner__logo {
+  margin-right: 40px;
+
+  @media (max-width: 1251px) {
+    @include flex (flex, normal, center, row)
+  }
+
+  @media (max-width: 768px) {
+    order: 0;
+    margin-right: 0;
+  }
+}
+
+.burger {
+  display: none;
+
+  @extend %burger;
+  margin-right: 16px;
+
+  @media (max-width: 1251px) {
+    display: block;
+  }
+
+  @media (max-width: 320px) {
+    margin-right: 14px;
+  }
+}
+
+.header-inner__search {
+  @include flex (flex, normal, center, row);
+  flex: 1;
+  margin-right: 15px;
+
+  @media (max-width: 768px) {
+    order: 2;
+    flex: 0;
+    margin-right: 0;
+    
+    .search-input {
+      visibility: hidden;
+    }
+  }
+}
+
+.header-inner__btn {
+  display: inline-block;
+  padding: 0;
+  margin-right: 10px;
+  background-color: transparent;
+
+  @media (max-width: 768px) {
+    margin-right: 0;
+  }
+}
+
+.search-input {
+  width: 100%;
+
+  @include font (15px, 400, $mainColor, 1.2);
+
+
+  &::placeholder {
+    @include font (15px, 400, $grayColor, 1.2);
+  }
+}
+
+.header-inner__purchase {
+  margin-right: 15px;
+  @include flex (flex, normal, center, row);
+
+  @media (max-width: 768px) {
+    order: 1;
+    margin-right: 0;
+  }
+}
+
+.header-purchase__geo {
+  @include flex (flex, normal, center, column);
+  padding: 0 16px;
+  margin-right: 16px;
+  @extend %br;
+
+  @include font (13px, 400, $grayColor, 1.2);
+  text-transform: uppercase;
+
+  cursor: pointer;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+.header-purchase__order {
+  margin-right: 12px;
+  @include flex (flex, normal, center, row);
+
+  cursor: pointer;
+
+  @media (max-width: 768px) {
+    margin-right: 0;
+  }
+}
+
+.header-order__name {
+  margin-bottom: 5px;
+
+  @include font (15px, 600, $greenColor, 1.2);
+
+  @media (max-width: 320px) {
+    margin-bottom: 0;
+  }
+}
+
+.header-order__desc {
+  @include font (13px, 400, $grayColor, 1.2);
+}
+
+.header-order__icon {
+  padding: 10px;
+}
+
+.button-cart {
+  padding: 13px 20px;
+  border-radius: 12px;
+
+  background: linear-gradient(301.4deg, #0FB643 0%, #9DE641 100%);
+
+  position: relative;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+.button-cart__total {
+  width: 100%;
+  padding: 4px 6px;
+  border-radius: 8px;
+  background-color: $greenHighColor;
+
+  @include font (13px, 400, $whiteColor, 1.2);
+
+  @include position (absolute, -8px, 40%, inherit, 1);
+}
+
+.header-inner__account {
+  @include flex (flex, normal, center, row);
+
+  @media (max-width: 1251px) {
+    display: none;
+  }
+}
+
+.header-account__favorite {
+  @extend %br;
+}
+
+.header-account__favorite,
+.header-account__login {
+  padding: 4px 13px;
+
+  background-color: transparent;
+}
+
+.header__subinner {
+  @include flex (flex, normal, center, row);
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+.header-subinner__main {
+  @include flex (flex, normal, center, row);
+  margin-right: 38px;
+}
+
+.header-subinner__catalog,
+.header-subinner__promotion {
+  padding-right: 16px;
+
+  @media (max-width:1251px) {
+    display: none;
+  }
+}
+
+.header-subinner__promotion {
+  @extend %br;
+}
+
+.header-catalog__link {
+  @include font (15px, 600, $greenColor, 1.2)
+}
+
+.header-promotion__link {
+  @include font (15px, 600, $orangeColor, 1.2)
+}
+
+.header-catalog__link,
+.header-promotion__link {
+  @include flex (flex, normal, center, row);
+}
+
+.header-subinner__nav {
+  padding: 0 16px;
+  @include flex (flex, normal, normal, row);
+}
+
+.header-nav__products {
+  @include flex (flex, normal, center, row);
+}
+
+.header-products__item {
+  &:not(:last-child) {
+    margin-right: 16px;
+  }
+
+  &:last-child {
+    .header-products__link {
+      color: $redColor;
+    }
+  }
+
+  .header-products__link {
+    color: $mainColor;
+  }
+}
+
+.header-subinner__other {
+  @media (max-width: 1251px) {
+    display: none;
+  }
+}
+
+.header-other__list {
+  @include flex (flex, normal, normal, row);
+}
+
+.header-other__item {  
+  &:not(:last-child) {
+    margin-right: 29px;
+  }
+}
+
+.header-other__link {
+  svg {
+    margin-right: 4px;
+  }
+
+  @include flex (flex, normal, center, row);
+
+  @include font (15px, 600, $mainColor, 1.2);
+}

@@ -1,0 +1,55 @@
+// Переменные
+$mainColor: #1A1A1A;
+$whiteColor: #fff;
+$greenColor: #36BA5F;
+$greenHighColor: #006C43;
+$greenHoverColor: #59C578;
+$greenActiveColor: #2DAA56;
+$grayColor: #949494;
+$grayLowColor: #F2F2F2;
+$orangeColor: #F78C07;
+$redColor: #FF3B30;
+
+// Миксины
+@mixin font ($fz, $fw, $c, $lh) {
+  font-family: 'Museo Sans Cyrl', sans-serif;
+  font-size: $fz;
+  font-weight: $fw;
+  color: $c;
+  line-height: $lh;
+}
+
+@mixin position ($pos, $t, $l, $r, $z) {
+  position: $pos;
+  top: $t;
+  left: $l;
+  right: $r;
+  z-index: $z;
+}
+
+@mixin flex ($d, $jus, $al, $fxd) {
+  display: $d;
+  justify-content: $jus;
+  align-items: $al;
+  flex-direction: $fxd;
+}
+
+@mixin boxShadow ($bra) {
+  box-shadow: 0px 0px $bra 0px rgba(0, 0, 0, 0.25);
+}
+
+// Шаблоны
+%img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+%br {
+  border-right: 1px solid $grayLowColor;
+}
+
+%burger {
+  display: inline-block;
+  background-color: transparent;
+}

@@ -1,0 +1,43 @@
+@import "./styles/nullstyle.scss";
+@import "./styles/extendstyle.scss";
+@import "./styles/headerstyle.scss";
+@import "./styles/herostyle.scss";
+
+@font-face {
+  font-family: 'Museo Sans Cyrl';
+  src: url('/fonts/3AFE66_0_0.woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Museo Sans Cyrl';
+  src: url('/fonts/3AFE66_1_0.woff2');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Museo Sans Cyrl';
+  src: url('/fonts/3AFE66_2_0.woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+
+body {
+  @include font (15px, 400, $mainColor, 1.2);
+
+  background-color: $whiteColor;
+}
+
+.container {
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 40px;
+
+  @media (max-width: 477px) {
+    padding: 0 10px;
+  }
+}
+

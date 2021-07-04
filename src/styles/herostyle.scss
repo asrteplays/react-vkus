@@ -1,0 +1,112 @@
+// Hero
+.hero {
+  padding-top: 31px;
+  padding-bottom: 65px;
+
+  background-image: url('/img/bg-flower.png'), url('/img/bg-flower-right.png');
+  background-repeat: no-repeat;
+  background-position: left center, right center;
+
+  @media (max-width: 1251px) {
+    background-image: url('/img/bg-flower-bottom.png');
+    background-position: center bottom -190px;
+
+    padding-bottom: 278px;
+  }
+
+  @media (max-width: 768px) {
+    padding-top: 16px;
+  }
+
+  @media (max-width: 477px) {
+    padding-bottom: 168px;
+
+    background-position: center bottom -70px;
+    background-size: contain;
+  }
+}
+
+.hero__content {
+  @include flex (flex, center, center, column);
+
+  text-align: center;
+}
+
+.hero-content__img {
+  img {
+    @extend %img;
+  }
+}
+
+.hero-content__text {
+  max-width: 568px;
+  margin-bottom: 20px;
+
+  @include font (20px, 600, $grayColor, 1.2);
+
+  @media (max-width: 768px) {
+    max-width: 600px;
+
+    @include font (17px, 600, $grayColor, 1.2);
+  }
+}
+
+.hero-content__controls {
+  @include flex (flex, normal, normal, row);
+}
+
+.button-link {
+  display: inline-block;
+  padding: 18px 50px;
+  min-width: 180px;
+  border-radius: 15px;
+  border: 1px solid $greenColor;
+
+  background-color: transparent;
+
+  transition: background-color .2s ease-in-out, color .2s ease-in-out;
+
+  @include font (17px, 600, $greenColor, 1.2);
+  text-align: center;
+
+  &:hover {
+    background-color: $greenColor;
+    
+    color: $whiteColor;
+  }
+
+  &:active {
+    background-color: $greenActiveColor;
+  }
+
+  &:not(:last-child) {
+    margin-right: 16px;
+  }
+
+  @media (max-width: 477px) {
+    min-width: 146px;
+    padding: 9px 37px;
+
+    @include font (13px, 400, $greenColor, 1.2);
+  }
+}
+
+.button-link.button-link--green {
+  border: none;
+
+  background-color: $greenColor;
+
+  @include font (17px, 600, $whiteColor, 1.2);
+
+  &:hover {
+    background-color: $greenHoverColor;
+  }
+
+  &:active {
+    background-color: $greenActiveColor;
+  }
+
+  @media (max-width: 477px) {
+    @include font (13px, 400, $whiteColor, 1.2);
+  }
+}
